@@ -9,7 +9,11 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimeryColour,
-      body: SafeArea(child: Column(children: [const CustoumAppBar()])),
+      body: SafeArea(
+        child: Column(children: [const CustoumAppBar(),]),
+      ),
     );
   }
 }
+
+
