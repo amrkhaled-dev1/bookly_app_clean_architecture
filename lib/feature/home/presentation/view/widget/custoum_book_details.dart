@@ -1,4 +1,5 @@
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_image.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -55,6 +56,7 @@ class CustoumBookDetails extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 90),
+                      const CustoumBookRaiting(),
                     ],
                   ),
                 ],
