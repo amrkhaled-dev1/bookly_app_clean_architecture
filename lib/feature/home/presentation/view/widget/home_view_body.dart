@@ -1,3 +1,5 @@
+import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,6 +7,9 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: kPrimeryColour,
+      body: SafeArea(child: Column(children: [const CustoumAppBar()])),
+    );
   }
 }
