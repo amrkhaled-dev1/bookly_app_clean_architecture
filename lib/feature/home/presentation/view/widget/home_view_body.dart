@@ -1,6 +1,7 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_item.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_list_view.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/future_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -37,27 +38,10 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
             ),
+            BestSellerListView(),
           ],
         ),
       ),
     );
   }
 }
-
-// class BestSellerListView extends StatelessWidget {
-//   const BestSellerListView({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListView.builder(
-//       physics: const NeverScrollableScrollPhysics(),
-//       itemCount: 10,
-//       itemBuilder: (context, index) {
-//         return Padding(
-//           padding: const EdgeInsets.only(left: 6.0, bottom: 12),
-//           child: const BestSellerItem(),
-//         );
-//       },
-//     );
-//   }
-// }
