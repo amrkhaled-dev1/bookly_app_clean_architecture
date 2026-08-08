@@ -3,8 +3,8 @@ import 'package:bookly_app_clean_architecture/feature/home/presentation/view/wid
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustoumBookDetails extends StatelessWidget {
-  const CustoumBookDetails({super.key});
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
