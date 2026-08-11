@@ -1,4 +1,4 @@
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_image.dart';
+import 'package:bookly_app_clean_architecture/core/widget/custoum_book_image.dart';
 import 'package:flutter/material.dart';
 
 class FutureListView extends StatelessWidget {

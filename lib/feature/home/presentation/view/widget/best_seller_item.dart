@@ -1,5 +1,5 @@
 import 'package:bookly_app_clean_architecture/core/router/route_name.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_image.dart';
+import 'package:bookly_app_clean_architecture/core/widget/custoum_book_image.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
