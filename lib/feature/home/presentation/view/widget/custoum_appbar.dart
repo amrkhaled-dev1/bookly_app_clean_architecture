@@ -7,6 +7,7 @@ class CustoumAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -18,6 +19,10 @@ class CustoumAppBar extends StatelessWidget {
               child: Image.asset(AssetsData.kLogo),
             ),
           ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.search, color: Colors.white, size: 32),
         ),
       ],
     );
