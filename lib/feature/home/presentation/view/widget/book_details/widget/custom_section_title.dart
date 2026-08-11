@@ -8,7 +8,7 @@ class CustomSectionTitle extends StatelessWidget {
     return Align(
       alignment: AlignmentGeometry.centerLeft,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        padding: const EdgeInsets.only(top: 15, left: 20, bottom: 10),
         child: Text(
           "You Can Also Like",
           style: TextStyle(
