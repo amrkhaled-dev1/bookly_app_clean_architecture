@@ -1,5 +1,4 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_item.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_list_view.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/future_list_view.dart';
