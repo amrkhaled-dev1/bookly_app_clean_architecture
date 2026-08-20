@@ -1,6 +1,8 @@
+import 'package:bookly_app_clean_architecture/core/errors/failure.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
+import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
-  Future<List<BookEntity>> featchFeatureBook();
-  Future<List<BookEntity>> featchNewestBook();
+  Future<Either<Failure, List<BookEntity>>> featchFeatureBook();
+  Future<Either<Failure, List<BookEntity>>> featchNewestBook();
 }
