@@ -1,4 +1,3 @@
-
 import 'package:bookly_app_clean_architecture/core/router/route_name.dart';
 import 'package:bookly_app_clean_architecture/core/utils/assets.dart';
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
