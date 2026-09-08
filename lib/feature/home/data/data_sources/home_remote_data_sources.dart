@@ -19,7 +19,7 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources {
       endPoint: "volumes?Filtering=free-ebooks&q=detective&",
     );
     List<BookEntity> books = getBookList(data);
-    saveBooks(books , kFeatureBox);
+    saveBooks(books, kFeatureBox);
 
     return books;
   }
@@ -30,6 +30,7 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources {
       endPoint: "volumes?Filtering=free-ebooks&q=detective&Sorting=newset&",
     );
     List<BookEntity> books = getBookList(data);
+    saveBooks(books, kNewestBox);
 
     return books;
   }
