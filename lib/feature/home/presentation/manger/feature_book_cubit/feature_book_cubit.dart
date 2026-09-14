@@ -7,6 +7,7 @@ class FeatureBookCubit extends Cubit<FeatureBookState> {
     : super(FeatureBookInitial());
   final FeatchFeaturedBookUseCase featchFeaturedBookUseCase;
   Future<void> featchFeatureBook() async {
+    emit(FeatureBookLoading());
     var result = await featchFeaturedBookUseCase.call();
     result.fold(
       (failure) {
