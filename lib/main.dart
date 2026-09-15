@@ -1,6 +1,7 @@
 import 'package:bookly_app_clean_architecture/core/router/app_route.dart';
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
 import 'package:bookly_app_clean_architecture/core/utils/function/setup_service_locator.dart';
+import 'package:bookly_app_clean_architecture/core/utils/simple_bloc_observer.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/use_cases/featch_featured_book_use_case.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/use_cases/featch_newest_book_use_case.dart';
@@ -16,6 +17,7 @@ void main() async {
   setupServiceLocator();
   await Hive.openBox<BookEntity>(kFeatureBox);
   await Hive.openBox<BookEntity>(kNewestBox);
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(BooklyApp());
 }
