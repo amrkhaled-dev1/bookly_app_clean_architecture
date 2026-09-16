@@ -1,7 +1,7 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_list_view.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/future_list_view.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/feature_list_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                   children: [
                     const CustoumAppBar(),
                     const SizedBox(height: 20),
-                    const FutureListView(),
+                    const FeatureListViewBlockBuilder(),
                     const SizedBox(height: 15),
                     const Text(
                       'Best Seller',

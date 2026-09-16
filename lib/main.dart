@@ -33,7 +33,7 @@ class BooklyApp extends StatelessWidget {
           create: (context) {
             return FeatureBookCubit(
               featchFeaturedBookUseCase: getIt<FeatchFeaturedBookUseCase>(),
-            );
+            )..featchFeatureBook();
           },
         ),
         BlocProvider(
