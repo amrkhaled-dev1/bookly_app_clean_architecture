@@ -18,7 +18,7 @@ class BestSellerItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            const CustoumBookImage(),
+            const CustoumBookImage(image: 'https://img.magnific.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid&w=740&q=80',),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8.0),

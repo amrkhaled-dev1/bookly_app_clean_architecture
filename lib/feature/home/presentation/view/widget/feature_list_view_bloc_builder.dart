@@ -12,7 +12,7 @@ class FeatureListViewBlockBuilder extends StatelessWidget {
     return BlocBuilder<FeatureBookCubit, FeatureBookState>(
       builder: (context, state) {
         if (state is FeatureBookSuccess) {
-          return const FutureListView();
+          return  FutureListView(books: state.books,);
         } else if (state is FeatureBookFailure) {
           return Text(state.errMassege);
         } else {

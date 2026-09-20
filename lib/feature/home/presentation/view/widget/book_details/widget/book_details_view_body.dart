@@ -18,7 +18,13 @@ class BookDetailsViewBody extends StatelessWidget {
         body: Column(
           children: [
             const CustoumAppbarBookDetails(),
-            SizedBox(height: 300, child: const CustoumBookImage()),
+            SizedBox(
+              height: 300,
+              child: const CustoumBookImage(
+                image:
+                    'https://img.magnific.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid&w=740&q=80',
+              ),
+            ),
             const SizedBox(height: 20),
 
             const BookDetailsSection(),

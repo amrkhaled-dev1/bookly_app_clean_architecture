@@ -1,10 +1,11 @@
 import 'package:bookly_app_clean_architecture/core/router/route_name.dart';
-import 'package:bookly_app_clean_architecture/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustoumBookImage extends StatelessWidget {
-  const CustoumBookImage({super.key});
+  final String image;
+  const CustoumBookImage({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +14,10 @@ class CustoumBookImage extends StatelessWidget {
         context.push(RouteName.kHomeViewDetails);
       },
       child: AspectRatio(
-        aspectRatio: 2.7 / 4,
+        aspectRatio: 2.6 / 4,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(18),
-          child: Image.asset(AssetsData.kTestImage, fit: BoxFit.fill),
+          child: CachedNetworkImage(imageUrl: image),
         ),
       ),
     );

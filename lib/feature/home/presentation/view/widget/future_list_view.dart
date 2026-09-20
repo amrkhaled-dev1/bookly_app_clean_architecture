@@ -1,8 +1,10 @@
 import 'package:bookly_app_clean_architecture/core/widget/custoum_book_image.dart';
+import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
 import 'package:flutter/material.dart';
 
 class FutureListView extends StatelessWidget {
-  const FutureListView({super.key});
+  const FutureListView({super.key, required this.books});
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class FutureListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: const CustoumBookImage(),
+            child: CustoumBookImage(image: books[index].image ?? ''),
           );
         },
       ),
