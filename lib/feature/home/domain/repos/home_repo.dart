@@ -3,6 +3,8 @@ import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_en
 import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<BookEntity>>> featchFeatureBook();
+  Future<Either<Failure, List<BookEntity>>> featchFeatureBook({
+    int pageNumber = 0,
+  });
   Future<Either<Failure, List<BookEntity>>> featchNewestBook();
 }
