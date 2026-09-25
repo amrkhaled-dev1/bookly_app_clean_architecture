@@ -7,11 +7,19 @@ class FeatureBookCubit extends Cubit<FeatureBookState> {
     : super(FeatureBookInitial());
   final FeatchFeaturedBookUseCase featchFeaturedBookUseCase;
   Future<void> featchFeatureBook({int pageNumber = 0}) async {
-    emit(FeatureBookLoading());
+    if (pageNumber == 0) {
+      emit(FeatureBookLoading());
+    } else {
+      emit(FeatureBookPaginationLoading());
+    }
     var result = await featchFeaturedBookUseCase.call(pageNumber);
     result.fold(
       (failure) {
-        emit(FeatureBookFailure(errMassege: failure.errMessage));
+        if (pageNumber == 0) {
+          emit(FeatureBookFailure(errMassege: failure.errMessage));
+        } else {
+          emit(FeatureBookPaginationFailure(errMassege: failure.errMessage));
+        }
       },
       (books) {
         emit(FeatureBookSuccess(books: books));

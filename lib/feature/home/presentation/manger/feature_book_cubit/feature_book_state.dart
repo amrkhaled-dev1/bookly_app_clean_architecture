@@ -12,6 +12,14 @@ final class FeatureBookSuccess extends FeatureBookState {
 
 final class FeatureBookLoading extends FeatureBookState {}
 
+final class FeatureBookPaginationLoading extends FeatureBookState {}
+
+final class FeatureBookPaginationFailure extends FeatureBookState {
+   final String errMassege;
+
+  FeatureBookPaginationFailure({required this.errMassege});
+}
+
 final class FeatureBookFailure extends FeatureBookState {
   final String errMassege;
 

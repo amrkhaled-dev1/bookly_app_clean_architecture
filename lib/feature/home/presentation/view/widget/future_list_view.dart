@@ -5,16 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FutureListView extends StatefulWidget {
-  const FutureListView({
-    super.key,
-    required this.books,
-    this.onFetchMore,
-    this.isLoading = false,
-  });
+  const FutureListView({super.key, required this.books, this.onFetchMore});
 
   final List<BookEntity> books;
   final VoidCallback? onFetchMore;
-  final bool isLoading;
 
   @override
   State<FutureListView> createState() => _FutureListViewState();
@@ -23,6 +17,7 @@ class FutureListView extends StatefulWidget {
 class _FutureListViewState extends State<FutureListView> {
   late final ScrollController _scrollController;
   var nextPage = 1;
+  var isLoading = false;
 
   @override
   void initState() {
@@ -31,16 +26,21 @@ class _FutureListViewState extends State<FutureListView> {
     _scrollController.addListener(_onScroll);
   }
 
-  void _onScroll() {
+  void _onScroll() async {
     if (!_scrollController.hasClients) return;
 
     final maxScroll = _scrollController.position.maxScrollExtent;
     final currentScroll = _scrollController.position.pixels;
 
-    if (currentScroll >= (maxScroll * 0.7) && !widget.isLoading) {
-      BlocProvider.of<FeatureBookCubit>(
-        context,
-      ).featchFeatureBook(pageNumber: nextPage++);
+    if (currentScroll >= (maxScroll * 0.7)) {
+      if (!isLoading) {
+        isLoading = true;
+        await BlocProvider.of<FeatureBookCubit>(
+          context,
+        ).featchFeatureBook(pageNumber: nextPage);
+        nextPage++;
+        isLoading = false;
+      }
     }
   }
 
