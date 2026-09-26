@@ -1,3 +1,4 @@
+import 'package:bookly_app_clean_architecture/core/widget/custom_progress_indicator.dart';
 import 'package:bookly_app_clean_architecture/core/widget/custom_top_snack_bar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/manger/feature_book_cubit/feature_book_cubit.dart';
@@ -40,7 +41,7 @@ class _FeatureListViewBlocConsumerState
           );
           return FutureListView(books: books);
         } else {
-          return CircularProgressIndicator();
+          return CustomProgressIndicator();
         }
       },
     );
