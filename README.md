@@ -1,17 +1,47 @@
-# bookly_app_clean_architecture
+# Bookly App
 
-A new Flutter project.
+A Flutter book application built to practice Clean Architecture, REST API integration, Bloc/Cubit state management, Hive local storage, Dependency Injection, and GoRouter navigation.
+
+## Features
+
+* Browse Featured Books
+* Browse Newest Books
+* Search for Books
+* Google Books API Integration
+* Offline Local Storage
+* Hive Local Database
+* Bloc/Cubit State Management
+* Clean Architecture
+* Dependency Injection
+* GoRouter Navigation
+* Error & Loading States
+* Responsive UI
+
+## Tech Stack
+
+* Flutter
+* Dart
+* Clean Architecture
+* Bloc/Cubit
+* Dio
+* Google Books API
+* Hive
+* GetIt
+* GoRouter
+* Equatable
+
+## Architecture
+
+The project follows Clean Architecture and is divided into:
+
+* Presentation Layer
+* Domain Layer
+* Data Layer
+* Core Layer
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```

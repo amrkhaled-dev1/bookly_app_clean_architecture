@@ -1,5 +1,5 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_list_view.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/newest_list_view.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/feature_list_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
                     const FeatureListViewBlocConsumer(),
                     const SizedBox(height: 15),
                     const Text(
-                      'Best Seller',
+                      'Newest Book',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
             ),
-            BestSellerListView(),
+            NewestListView(),
           ],
         ),
       ),

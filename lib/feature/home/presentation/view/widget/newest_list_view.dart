@@ -1,8 +1,8 @@
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/best_seller_item.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/newest_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class NewestListView extends StatelessWidget {
+  const NewestListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class BestSellerListView extends StatelessWidget {
       delegate: SliverChildBuilderDelegate((context, index) {
         return Padding(
           padding: const EdgeInsets.only(left: 8.0, bottom: 10.0),
-          child: BestSellerItem(),
+          child: NewestItem(),
         );
       }, childCount: 10),
     );
