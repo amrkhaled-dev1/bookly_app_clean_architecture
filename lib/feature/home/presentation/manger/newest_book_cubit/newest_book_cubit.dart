@@ -7,8 +7,9 @@ class NewestBookCubit extends Cubit<NewestBookState> {
     : super(NewestBookInitial());
   final FeatchNewestBookUseCase featchNewestBookUseCase;
   Future<void> featchNewestBook() async {
-    var result = await featchNewestBookUseCase.call();
     emit(NewestBookLoading());
+
+    var result = await featchNewestBookUseCase.call();
     result.fold(
       (failure) {
         emit(NewestBookFailure(errMassege: failure.errMessage));

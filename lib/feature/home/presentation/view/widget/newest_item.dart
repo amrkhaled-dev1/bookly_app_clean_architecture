@@ -1,12 +1,14 @@
 import 'package:bookly_app_clean_architecture/core/router/route_name.dart';
 import 'package:bookly_app_clean_architecture/core/widget/custoum_book_image.dart';
+import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewestItem extends StatelessWidget {
-  const NewestItem({super.key});
+  const NewestItem({super.key, required this.books});
+  final BookEntity books;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +20,7 @@ class NewestItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            const CustoumBookImage(
-              image:
-                  'https://img.magnific.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid&w=740&q=80',
-            ),
+            CustoumBookImage(image: books.image ?? ''),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8.0),
@@ -33,7 +32,7 @@ class NewestItem extends StatelessWidget {
                       child: Text(
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        'Herry Potter and the Goblet of fire',
+                        books.title,
                         style: GoogleFonts.playfairDisplay(
                           color: Colors.white,
                           fontSize: 20,
@@ -41,23 +40,23 @@ class NewestItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 8),
                     Text(
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      'Rubyard Kipling',
+                      books.authorName ?? '',
                       style: GoogleFonts.montserrat(
                         color: Colors.grey,
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 5),
 
                     Row(
                       children: [
                         Text(
-                          '19.99',
+                          'Free',
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
                             fontSize: 20,

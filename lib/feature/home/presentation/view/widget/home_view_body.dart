@@ -1,7 +1,7 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/newest_list_view.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_appbar.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/feature_list_view_bloc_consumer.dart';
+import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/newest_list_view_block_consumer.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
             ),
-            NewestListView(),
+            NewestListViewBlockConsumer(),
           ],
         ),
       ),

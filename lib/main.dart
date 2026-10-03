@@ -40,7 +40,7 @@ class BooklyApp extends StatelessWidget {
           create: (context) {
             return NewestBookCubit(
               featchNewestBookUseCase: getIt<FeatchNewestBookUseCase>(),
-            );
+            )..featchNewestBook();
           },
         ),
       ],
