@@ -1,4 +1,5 @@
 import 'package:bookly_app_clean_architecture/core/utils/constant.dart';
+import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/book_details/widget/book_action.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/book_details/widget/book_details_section.dart';
 import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/book_details/widget/custom_section_title.dart';
@@ -8,7 +9,8 @@ import 'package:bookly_app_clean_architecture/feature/home/presentation/view/wid
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.books});
+  final BookEntity books;
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +22,15 @@ class BookDetailsViewBody extends StatelessWidget {
             const CustoumAppbarBookDetails(),
             SizedBox(
               height: 300,
-              child: const CustoumBookImage(
-                image:
-                    'https://img.magnific.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid&w=740&q=80',
-              ),
+              child: CustoumBookImage(image: books.image ?? "", book: books),
             ),
             const SizedBox(height: 20),
 
-            const BookDetailsSection(),
+            BookDetailsSection(books: books),
             const SizedBox(height: 20),
             const BookAction(),
             const CustomSectionTitle(),
-            const SimilerBookListView(),
+            SimilerBookListView(books: books),
           ],
         ),
       ),

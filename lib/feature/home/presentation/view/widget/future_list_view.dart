@@ -16,12 +16,14 @@ class FutureListView extends StatefulWidget {
 
 class _FutureListViewState extends State<FutureListView> {
   late final ScrollController _scrollController;
+
   var nextPage = 1;
   var isLoading = false;
 
   @override
   void initState() {
     super.initState();
+
     _scrollController = ScrollController();
     _scrollController.addListener(_onScroll);
   }
@@ -35,9 +37,11 @@ class _FutureListViewState extends State<FutureListView> {
     if (currentScroll >= (maxScroll * 0.7)) {
       if (!isLoading) {
         isLoading = true;
+
         await BlocProvider.of<FeatureBookCubit>(
           context,
         ).featchFeatureBook(pageNumber: nextPage);
+
         nextPage++;
         isLoading = false;
       }
@@ -61,7 +65,10 @@ class _FutureListViewState extends State<FutureListView> {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: CustoumBookImage(image: widget.books[index].image ?? ''),
+            child: CustoumBookImage(
+              book: widget.books[index],
+              image: widget.books[index].image ?? "",
+            ),
           );
         },
       ),

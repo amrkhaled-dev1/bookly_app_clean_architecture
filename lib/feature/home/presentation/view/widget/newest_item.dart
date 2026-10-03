@@ -19,7 +19,7 @@ class NewestItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            CustoumBookImage(image: books.image ?? ''),
+            CustoumBookImage(image: books.image ?? '', book: books),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8.0),
