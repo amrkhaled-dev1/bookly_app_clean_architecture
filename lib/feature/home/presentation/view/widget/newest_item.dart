@@ -1,7 +1,6 @@
 import 'package:bookly_app_clean_architecture/core/router/route_name.dart';
 import 'package:bookly_app_clean_architecture/core/widget/custoum_book_image.dart';
 import 'package:bookly_app_clean_architecture/feature/home/domain/entity/book_entity.dart';
-import 'package:bookly_app_clean_architecture/feature/home/presentation/view/widget/custoum_book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,13 +57,13 @@ class NewestItem extends StatelessWidget {
                         Text(
                           'Free',
                           style: GoogleFonts.montserrat(
-                            color: Colors.white,
+                            color: Color(0xffFFDD4F),
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(width: 90),
-                        const CustoumBookRaiting(),
+                        //const CustoumBookRaiting(),
                       ],
                     ),
                   ],

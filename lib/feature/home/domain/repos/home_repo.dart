@@ -6,5 +6,7 @@ abstract class HomeRepo {
   Future<Either<Failure, List<BookEntity>>> featchFeatureBook({
     int pageNumber = 0,
   });
-  Future<Either<Failure, List<BookEntity>>> featchNewestBook();
+  Future<Either<Failure, List<BookEntity>>> featchNewestBook({
+    int pageNumber = 0,
+  });
 }

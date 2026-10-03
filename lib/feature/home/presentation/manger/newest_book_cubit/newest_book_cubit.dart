@@ -5,14 +5,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NewestBookCubit extends Cubit<NewestBookState> {
   NewestBookCubit({required this.featchNewestBookUseCase})
     : super(NewestBookInitial());
-  final FeatchNewestBookUseCase featchNewestBookUseCase;
-  Future<void> featchNewestBook() async {
-    emit(NewestBookLoading());
 
-    var result = await featchNewestBookUseCase.call();
+  final FeatchNewestBookUseCase featchNewestBookUseCase;
+
+  Future<void> featchNewestBook({int pageNumber = 0}) async {
+    if (pageNumber == 0) {
+      emit(NewestBookLoading());
+    } else {
+      emit(NewestBookPaginationLoading());
+    }
+
+    final result = await featchNewestBookUseCase.call(pageNumber);
+
     result.fold(
       (failure) {
-        emit(NewestBookFailure(errMassege: failure.errMessage));
+        if (pageNumber == 0) {
+          emit(NewestBookFailure(errMassege: failure.errMessage));
+        } else {
+          emit(NewestBookPaginationFailure(errMassege: failure.errMessage));
+        }
       },
       (books) {
         emit(NewestBookSuccess(books: books));
